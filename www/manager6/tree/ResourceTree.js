@@ -186,8 +186,6 @@ Ext.define('PVE.tree.ResourceTree', {
 		groupinfo.leaf = false;
 		groupinfo.groupbyid = v; 
 		group = me.addChildSorted(node, groupinfo);
-		// fixme: remove when EXTJS has fixed those bugs?!
-		group.expand(); group.collapse();
 	    }
 	    if (info.type === groupby) {
 		return group;
@@ -363,7 +361,6 @@ Ext.define('PVE.tree.ResourceTree', {
 
 	    // on first tree load set the selection from the stateful provider
 	    if (!pdata.updateCount) {
-		rootnode.collapse();
 		rootnode.expand();
 		me.applyState(sp.get(stateid));
 	    }
